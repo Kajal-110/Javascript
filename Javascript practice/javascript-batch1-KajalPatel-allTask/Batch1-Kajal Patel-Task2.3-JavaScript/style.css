@@ -1,0 +1,96 @@
+.container{
+    margin:0 auto;
+    text-align:center;
+}
+/* h1{
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+} */
+
+
+.section input{
+    width: 100%;
+    border-radius: 1px;
+}
+.Search{
+    width: 100%;
+    background-color: white;
+    height: 40px;
+}
+
+body{
+    
+    background-image:  linear-gradient(to right, rgb(199, 247, 246), rgba(125, 27, 27, 0), rgb(199, 247, 246)); 
+   
+    
+}
+.text1{
+    color: rgb(29, 101, 117);
+}
+.header1{
+    background-color:rgb(109, 109, 182);
+}
+.header{
+    background-color:rgb(159, 188, 14);
+}
+#demoList{
+    counter-reset: section;
+}
+.sno2:before{
+    counter-increment: section;
+    content: counter(section);
+}
+.table ,thead,tr,th{
+    font-size: 20px;
+    font-weight: medium;
+    letter-spacing:0.35px;
+
+
+}
+.table  tbody tr td .btn{
+    display: inline-block;
+    font-weight: 20px;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+}
+@media screen and (max-width:600px) {
+    #myTable thead{
+        display: none;
+    }
+    #myTable, #myTable tbody, #myTable tr, #myTable td{
+        display: block;
+        width: 100%;
+        /* text-align: right; */
+    }
+    #myTable tr{
+        margin-bottom: 15px;
+        background-color:ghostwhite;
+    }
+    #myTable tbody tr td{
+        text-align: right;
+        padding-left: 40%;
+        position: relative;
+    }
+    #myTable tbody tr td::before{
+        content: attr(data-label);
+        
+        position: absolute;
+        left: 0;
+        padding-left: 5%; 
+
+    }
+}
+
+.salmon{
+    background-color: rgb(157, 243, 214);
+}
+
+input:invalid{
+    border: 2px dashed red;
+}
+input:invalid:required{
+    background-image: linear-gradient(to right, pink, lightgreen);
+}
+input:valid{
+    border: 2px solid black;
+}

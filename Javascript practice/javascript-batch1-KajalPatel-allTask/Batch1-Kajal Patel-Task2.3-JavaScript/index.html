@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    
+    <div class="container mt-5 ">
+        <div class=" table-responsive ">
+            <h1 class="text-center"><u class="text1">Kajal Patel- Batch1- JavaScript-Task 2.3</u></h1>
+            <div class=" d-flex justify-content-center mt-5"> <button class="btn btn-info" onclick="addNewRow() ">Add New Row</button></div>
+           <form onsubmit="return validateData() " name="myForm" id="form">
+          
+            <table class="table table-striped section mt-3 "  id="myTable" >
+                <thead class="header1">
+                  <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Mark</th>
+                    <th>Result</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                  
+                    <td  data-label="S.No :" class="sno">1</td>
+                    <td  data-label="Name:"><input value="Kajal" class="name"  name="name" id="name"  >
+                    <!-- <div id="error"></div> -->
+                    </td>
+                    <td  data-label="Subject :"><input class="subject" value="Physics" id="subject"  name="subject"></td>
+                    <td data-label="Marks"><input type="text" value="86" class="marks" min="1" max="100"  name="marks" ></td>
+                   
+                    <td data-label="Result"> <button  id="button" class="btn btn-dark " type="button" onclick="visited(this)" >Accept</button>
+                      <button  class="btn btn-primary  " onclick="notVisited(this)" >Reject</button></td>
+                    <td></td>
+                    </tr>
+                  <tr>
+                    <td  data-label="S.No :" class="sno">2</td>
+                    <td data-label="Name:"><input value="Simran" class="name" name="name" id="name"  ></td>
+                    <td data-label="Subject :"><input class="subject" value="Chemistry" id="subject" name="subject"></td>
+                    <td data-label="Marks"><input type="text" value="88" class="marks" min="1" max="100" name="marks" ></td>
+                   
+                    <td data-label="Result"> <button  class="btn btn-dark " type="submit" onsubmit=" visited(this)" >Accept</button>
+                      <button type="button" class="btn btn-primary" onclick="notVisited(this)" >Reject</button></td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                    <td  data-label="S.No :" class="sno">3</td>
+                    <td data-label="Name:"><input value="Pooja"  class="name" name="name" id="name" ></td>
+                    <td data-label="Subject :"><input class="subject" value="Physics" id="subject" name="subject"></td>
+                    <td data-label="Marks"><input type="text" value="68" class="marks" min="1" max="100" name="marks" ></td>
+                   
+                    <td data-label="Result"> <button class="btn btn-dark " type="button" onclick=" visited(this)" >Accept</button>
+                      <button type="button" class="btn btn-primary " onclick="notVisited(this)" >Reject</button></td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                    <td   data-label="S.No :" class="sno">4</td>
+                    <td data-label="Name:" ><input value="Simran" class="name" name="name" id="name" ></td>
+                    <td data-label="Subject :"><input class="subject" value="maths" id="subject" name="subject" ></td>
+                    <td data-label="Marks"><input type="text" value="45" class="marks" min="1" max="100" name="marks"></td>
+                   
+                    <td><button  class="btn btn-dark " type="button" onclick=" visited(this)" >Accept</button>
+                      <button type="button" class="btn btn-primary " onclick="notVisited(this)" >Reject</button></td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                    <td   data-label="S.No :" class="sno">5</td>
+                    <td data-label="Name:"><input value="Kajal" class="name" name="name" id="name" ></td>
+                    <td data-label="Subject :"><input class="subject" value="Hindi" id="subject" name="subject" ></td>
+                    <td data-label="Marks"><input type="text" value="30" class="marks" min="1" max="100" name="marks"></td>
+                   
+                    <td data-label="Result"> <button   class="btn btn-dark" type="button" onclick=" visited(this)" >Accept</button>
+                      <button type="button" class="btn btn-primary" onclick="notVisited(this)" >Reject</button></td>
+                      <td></td>
+                  </tr>
+                </tbody>
+               
+              </table>
+              <div class=" d-flex justify-content-center"> <input class="btn btn-info" type="submit"  > </input></div> 
+            </form>
+             
+            </div>
+        
+         
+          <div class=" col-sm-12 mt-5  d-flex row ">
+            <div class="col-sm-6  justify-content-center mt-3 ">
+              <input  class=" Search" style="border-radius: 12px; " type="text" id="myInput" onkeyup="searchDataInSecondTable()" placeholder="Search for Names and Subject..">
+            </div>
+            <div class="col-sm-6  justify-content-center text-center mt-3 btn-info">
+               <button class="btn btn-info" style="border-radius: 12px; height: 40px; width: 100%; " > Click on Name and Subject to Sort Data</button> 
+           
+            </div>
+            <!-- <div class="col-sm-2  justify-content-center mt-3">
+              <button id="findPercentages" style="width: 100%;" class="btn btn-info" type="button" onclick="findPercentages()" >Find Percentages</button>
+            </div>
+            <div class="col-sm-2  justify-content-center mt-3">
+              <button id="findAcceptedRows" style="width: 100%;" class="btn btn-info" type="button" onclick="AcceptedRows()" >Accepted Rows</button>
+            </div> -->
+          </div>
+
+          <div class=" d-flex justify-content-center mt-5 table-responsive">
+            <table class="table table-striped " id="demoList">
+             
+            </table>   
+          </div> 
+          <div class=" d-flex justify-content-center mt-5 table-responsive">
+            <table class="table table-striped " id="percentages">
+             
+            </table>   
+          </div> 
+          <div class=" d-flex justify-content-center mt-5 table-responsive">
+            <table class="table table-striped " id="acceptedRows">
+             
+            </table>   
+          </div> 
+        </div>
+       
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

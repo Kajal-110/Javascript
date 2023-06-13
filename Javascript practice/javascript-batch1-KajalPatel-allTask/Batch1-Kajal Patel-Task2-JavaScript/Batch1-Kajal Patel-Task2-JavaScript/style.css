@@ -1,0 +1,38 @@
+
+.section input{
+    width: 50%;
+    border-radius: 1px;
+}
+.Search{
+    width: 50%;
+    background-color: white;
+    height: 40px;
+}
+
+body{
+    
+    background-image:  linear-gradient(to right, rgb(199, 247, 246), rgba(125, 27, 27, 0), rgb(199, 247, 246));
+}
+.text1{
+    color: rgb(67, 67, 136);
+}
+.header{
+    background-color:white;
+}
+#header{
+    background-color: white;
+}
+#demoList{
+    counter-reset: section;
+}
+.sno2:before{
+    counter-increment: section;
+    content: counter(section);
+}
+
+@media screen and (max-width: 480px) {
+    .table, thead, tbody, tr, td{
+      width:100% ;
+      display: block;
+    }
+  }

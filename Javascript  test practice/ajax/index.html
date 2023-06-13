@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- <button id="addRow">Add new row</button> -->
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr class="table-danger ">
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Extn.</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <script>
+
+        // $(document).ready(function () {
+        //     var t = $('#example').DataTable();
+        //     var counter = 1;
+
+        //     $('#addRow').on('click', function () {
+        //         t.row.add([counter + '.1', counter + '.2', counter + '.3', counter + '.4', counter + '.5']).draw(false);
+
+        //         counter++;
+        //     });
+
+        //     // Automatically add a first row of data
+        //     $('#addRow').click();
+        // });
+
+        $(document).ready(function () {
+
+            $('#example').DataTable({
+
+
+
+                ajax: '../ajax/data.txt',
+                scrollY: 200,
+                scrollCollapse: true,
+                paging: false,
+            });
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                $.fn.dataTable.tables({ visible: true, api: true }).columns.adjust();
+            });
+
+            $('#myTable2').DataTable().search('New York').draw();
+        });
+    </script>
+</body>
+
+</html>

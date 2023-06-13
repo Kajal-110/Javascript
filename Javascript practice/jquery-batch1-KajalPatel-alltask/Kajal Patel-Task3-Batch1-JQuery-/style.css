@@ -1,0 +1,18 @@
+table{
+    counter-reset: rowCount;
+}
+.sno:before{
+    counter-increment: rowCount;
+    content: counter(rowCount);
+}
+th{
+    cursor: pointer;
+}
+
+.pass, .fail{
+    background-color:purple
+}
+h6{
+    text-align: center;
+    color:darkblue
+}
